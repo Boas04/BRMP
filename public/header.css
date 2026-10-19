@@ -7,7 +7,6 @@
 .header-descriptor{border-left:1px solid var(--line);padding-left:32px;flex:1}
 .header-descriptor>span{font-size:10px;letter-spacing:1.6px;font-weight:700;color:var(--muted)}
 .header-descriptor p{font-size:16px;line-height:1.5;max-width:208px;margin-top:8px;font-weight:500}
-.site-header .header-contact{gap:0;line-height:1.8}.site-header .header-contact>span{font-size:10px;letter-spacing:1.2px;margin-bottom:8px}.site-header .header-contact a:first-of-type{font-size:20px;letter-spacing:-.4px}.site-header .header-contact a:last-child{font-size:11px}
 .header-navigation{border-top:1px solid var(--line);background:#fcfdfb}
 .site-header #navigation{display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:72px;padding-block:0;border:0}
 .nav-links,.nav-actions{display:flex;align-items:center;gap:32px}.nav-actions{gap:24px}
@@ -20,9 +19,9 @@
 .header-search{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:8px 16px;min-height:48px;background:var(--teal);color:var(--green);font-size:12px;font-weight:700;white-space:nowrap;border-radius:4px}
 .header-search:hover{background:#50e7c5;text-decoration:none}.header-search svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8}
 .site-header .menu-toggle{display:none}.skip{z-index:100}
-@media(max-width:1100px){.header-descriptor{display:none}.site-header .header-contact{margin-left:auto}.nav-links{gap:24px}.nav-actions{gap:16px}.site-header #navigation{gap:16px}}
+@media(max-width:1100px){.header-descriptor{display:none}.header-help{margin-left:auto}.nav-links{gap:24px}.nav-actions{gap:16px}.site-header #navigation{gap:16px}}
 @media(max-width:900px){
-.site-header .masthead{min-height:112px;padding-block:8px;gap:16px;flex-wrap:wrap}.site-header .identity img{width:280px;height:96px}.site-header .header-contact{display:none}
+.site-header .masthead{min-height:112px;padding-block:8px;gap:16px;flex-wrap:wrap}.site-header .identity img{width:280px;height:96px}.site-header .header-help{display:none}
 .site-header .menu-toggle{display:flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:8px 16px;margin-left:auto;border:1px solid var(--line);border-radius:4px;background:white;color:var(--green);font-size:12px}
 .menu-glyph{display:block;width:16px;height:12px;border-block:1.5px solid currentColor;position:relative}.menu-glyph:after{content:'';position:absolute;left:0;right:0;top:4px;border-top:1.5px solid currentColor}
 .menu-toggle[aria-expanded=true] .menu-glyph{border:0}.menu-toggle[aria-expanded=true] .menu-glyph:before,.menu-toggle[aria-expanded=true] .menu-glyph:after{content:'';position:absolute;left:0;right:0;top:5px;border-top:1.5px solid currentColor;transform:rotate(45deg)}.menu-toggle[aria-expanded=true] .menu-glyph:after{transform:rotate(-45deg)}
@@ -32,3 +31,13 @@
 }
 @media(max-width:680px){.site-utility .wrap{justify-content:space-between;font-size:10px}.site-utility .wrap>span:first-child{display:block;max-width:192px;font-size:9px}.site-header .identity img{width:208px;height:80px}.site-header .masthead{min-height:96px;gap:8px}.site-header .menu-toggle{padding:8px;gap:8px}}
 @media(prefers-reduced-motion:no-preference){.nav-links>a,.header-search{transition:background-color .15s,color .15s}}
+
+/* Contact details live in the contact section; the header offers one direct action. */
+.header-help{display:flex;flex-direction:column;align-items:flex-end;gap:8px;margin-left:auto}
+.header-help>span{font-size:10px;letter-spacing:1.2px;color:var(--muted);font-weight:600}
+.header-whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:8px 16px;border:1px solid #bfd0c5;border-radius:4px;background:#f4f8f5;color:var(--green);font-size:12px;font-weight:600;white-space:nowrap}
+.header-whatsapp svg{width:24px;height:24px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.header-whatsapp .contact-arrow{margin-left:8px;font-size:16px}.header-whatsapp:hover{background:#e6f3eb;border-color:#668b77;text-decoration:none}
+.mobile-whatsapp{display:none}
+@media(max-width:900px){.mobile-whatsapp{display:flex;align-self:stretch;justify-content:flex-start;padding:16px}.mobile-whatsapp .contact-arrow{margin-left:auto}}
+@media(max-width:680px){.site-header .identity img{width:200px}}

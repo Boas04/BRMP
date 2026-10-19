@@ -15,6 +15,7 @@ headerNav.addEventListener('keydown', event => {
 headerMenu.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
 headerNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
   closeMenu();
+  if (!link.hash) return;
   const target = document.querySelector(link.hash);
   const focusTarget = link.classList.contains('header-search') ? document.querySelector('#hero-query') : target;
   if (focusTarget) { if (!focusTarget.matches('input')) focusTarget.setAttribute('tabindex', '-1'); focusTarget.focus({preventScroll:true}); }
