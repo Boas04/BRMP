@@ -1,0 +1,17 @@
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3000
+      DATABASE_PATH: /app/data/brmp.sqlite
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - brmp_data:/app/data
+      - brmp_backups:/app/backups
+volumes:
+  brmp_data:
+  brmp_backups:

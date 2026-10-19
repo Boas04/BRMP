@@ -1,0 +1,195 @@
+[
+  {
+    "id": "pepsitp",
+    "kind": "service",
+    "status": "published",
+    "data": {
+      "name": "Satu Layanan Data",
+      "category": "Data",
+      "description": "Akses layanan PEPSITP melalui tautan sumber yang tersedia.",
+      "source": "PEPSITP · bit.ly",
+      "url": "https://bit.ly/PEPSITP",
+      "access": "Gunakan akun yang diberikan pengelola jika diminta login.",
+      "keywords": "pertanian database pepsitp"
+    }
+  },
+  {
+    "id": "benih",
+    "kind": "service",
+    "status": "published",
+    "data": {
+      "name": "Distribusi benih",
+      "category": "Benih",
+      "description": "Temukan tautan informasi distribusi benih PPMPTP.",
+      "source": "PPMPTP · Linktree",
+      "url": "https://linktr.ee/DistribusiBenihPPMPTP",
+      "access": "Buka daftar tautan Linktree, lalu pilih informasi yang dibutuhkan. Ketentuan akses mengikuti halaman tujuan.",
+      "keywords": "benih distribusi ppmptp"
+    }
+  },
+  {
+    "id": "dokumen",
+    "kind": "service",
+    "status": "published",
+    "data": {
+      "name": "Dokumen pendukung",
+      "category": "Dokumen",
+      "description": "Telusuri berkas dan referensi yang tersedia di folder utama.",
+      "source": "Google Drive",
+      "url": "https://drive.google.com/drive/folders/1msRqHatMx5PsWWrOgfnn6Uzz9Er6NqP2?usp=sharing",
+      "access": "Akun Google atau persetujuan pemilik folder mungkin diperlukan.",
+      "keywords": "arsip folder berkas referensi database"
+    }
+  },
+  {
+    "id": "sheet",
+    "kind": "service",
+    "status": "published",
+    "data": {
+      "name": "Referensi data & spesifikasi",
+      "category": "Data",
+      "description": "Buka lembar kerja sumber untuk melihat data dan spesifikasi yang disediakan.",
+      "source": "Google Sheets",
+      "url": "https://docs.google.com/spreadsheets/d/1I9QQC1zpUV0n8dO5BWq6uNkA5ogqziD0WIR2A_CBhRU/edit?usp=sharing",
+      "access": "Hak akses mengikuti pengaturan pemilik spreadsheet. Ajukan izin di halaman sumber jika diperlukan.",
+      "keywords": "spreadsheet spesifikasi lembar kerja tabel database"
+    }
+  },
+  {
+    "id": "konsultasi",
+    "kind": "service",
+    "status": "published",
+    "data": {
+      "name": "Konsultasi padi",
+      "category": "Publik",
+      "description": "Buka informasi Layanan Konsultasi Padi (LKP) di situs BRMP Tanaman Pangan.",
+      "source": "BRMP Tanaman Pangan",
+      "url": "https://tanamanpangan.brmp.pertanian.go.id/layanan/layanan/layanan-konsultasi-padi-lkp",
+      "access": "Prosedur konsultasi mengikuti informasi pada situs resmi.",
+      "keywords": "lkp konsultasi padi petani"
+    }
+  },
+  {
+    "id": "ppid",
+    "kind": "service",
+    "status": "published",
+    "data": {
+      "name": "Informasi publik · PPID",
+      "category": "Publik",
+      "description": "Temukan informasi kanal pelayanan informasi publik lembaga.",
+      "source": "BRMP Tanaman Pangan",
+      "url": "https://tanamanpangan.brmp.pertanian.go.id/layanan/sistem-pemerintahan-berbasis-elektronik-spbe/ppid",
+      "access": "Permintaan informasi diajukan melalui kanal resmi yang tercantum pada halaman sumber.",
+      "keywords": "ppid keterbukaan permohonan informasi"
+    }
+  },
+  {
+    "id": "pustaka",
+    "kind": "service",
+    "status": "published",
+    "data": {
+      "name": "Perpustakaan",
+      "category": "Publik",
+      "description": "Akses informasi layanan perpustakaan melalui situs lembaga.",
+      "source": "BRMP Tanaman Pangan",
+      "url": "https://tanamanpangan.brmp.pertanian.go.id/layanan/sistem-pemerintahan-berbasis-elektronik-spbe/perpustakaan",
+      "access": "Ketersediaan koleksi dan aturan penggunaan mengikuti ketentuan penyedia.",
+      "keywords": "buku publikasi pustaka perpustakaan"
+    }
+  },
+  {
+    "id": "aduan",
+    "kind": "service",
+    "status": "published",
+    "data": {
+      "name": "Kanal pengaduan",
+      "category": "Publik",
+      "description": "Temukan kanal pengaduan resmi dan informasi penyampaiannya.",
+      "source": "BRMP Tanaman Pangan",
+      "url": "https://tanamanpangan.brmp.pertanian.go.id/layanan/sistem-pemerintahan-berbasis-elektronik-spbe/pengaduan",
+      "access": "Pengaduan disampaikan pada kanal resmi, bukan melalui portal ini.",
+      "keywords": "lapor pengaduan aspirasi"
+    }
+  },
+  {
+    "id": "favorit",
+    "kind": "knowledge",
+    "status": "published",
+    "data": {
+      "title": "Layanan tersimpan",
+      "body": "Tekan Simpan pada layanan dan buka menu Tersimpan. Daftar tersimpan hanya berada di browser ini, tidak tersinkron ke perangkat lain.",
+      "keywords": "favorit bookmark tersimpan simpan",
+      "url": "#layanan"
+    }
+  },
+  {
+    "id": "csv",
+    "kind": "knowledge",
+    "status": "published",
+    "data": {
+      "title": "Unduh direktori CSV",
+      "body": "Gunakan pencarian dan filter lalu tekan Unduh daftar CSV. File berisi tautan layanan yang ditampilkan, bukan isi database eksternal.",
+      "keywords": "csv unduh ekspor download",
+      "url": "#layanan"
+    }
+  },
+  {
+    "id": "akses",
+    "kind": "knowledge",
+    "status": "published",
+    "data": {
+      "title": "Akses data",
+      "body": "Hak akses mengikuti masing-masing aplikasi. Gunakan akun dari pengelola bila diminta login. Isi database eksternal belum disinkron otomatis ke portal. Jangan kirim kata sandi dalam percakapan.",
+      "keywords": "login akun izin sinkron pembaruan data otomatis",
+      "url": "#layanan"
+    }
+  },
+  {
+    "id": "daftar",
+    "kind": "knowledge",
+    "status": "published",
+    "data": {
+      "title": "Daftar layanan",
+      "body": "Tersedia Satu Layanan Data PEPSITP, distribusi benih, dokumen pendukung, referensi data dan spesifikasi, konsultasi padi, PPID, perpustakaan, dan kanal pengaduan.",
+      "keywords": "layanan tersedia daftar bantuan",
+      "url": "#layanan"
+    }
+  },
+  {
+    "id": "berita-batu-bara",
+    "kind": "article",
+    "status": "published",
+    "data": {
+      "title": "Gerakan Tanam Padi PM-AAS di Batu Bara",
+      "body": "Informasi kegiatan Gerakan Tanam Padi PM-AAS di Batu Bara. Artikel dipublikasikan 1 Oktober 2026.",
+      "date": "2026-10-01",
+      "url": "https://tanamanpangan.brmp.pertanian.go.id/berita/gerakan-tanam-padi-pm-aas-di-batu-bara-dorong-peningkatan-produktivitas-dan-swasembada-pangan",
+      "image": "/assets/kegiatan-batu-bara.jpg"
+    }
+  },
+  {
+    "id": "berita-lombok",
+    "kind": "article",
+    "status": "published",
+    "data": {
+      "title": "Modernisasi budidaya padi dan jagung di Lombok Tengah",
+      "body": "Informasi kegiatan modernisasi budidaya padi dan jagung di Lombok Tengah. Artikel dipublikasikan 29 September 2026.",
+      "date": "2026-09-29",
+      "url": "https://tanamanpangan.brmp.pertanian.go.id/berita/modernisasi-budidaya-padi-dan-jagung-di-lombok-tengah",
+      "image": "/assets/kegiatan-lombok.jpg"
+    }
+  },
+  {
+    "id": "site",
+    "kind": "site",
+    "status": "published",
+    "data": {
+      "name": "BRMP Tanaman Pangan",
+      "address": "Jl. Merdeka No. 147, Kelurahan Menteng, Kecamatan Bogor Barat, Kota Bogor, Jawa Barat 16111",
+      "phone": "+622518331718",
+      "email": "brmp.tanamanpangan@pertanian.go.id",
+      "whatsapp": "6285179860147",
+      "profile": "BRMP adalah Badan Perakitan dan Modernisasi Pertanian. Portal BRMP Tanaman Pangan menyediakan akses data, distribusi benih, informasi publik, dokumen, dan informasi kegiatan."
+    }
+  }
+]
