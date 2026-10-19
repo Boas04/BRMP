@@ -28,3 +28,26 @@ test('pengaturan kontak satu sumber untuk API publik dan chatbot',async t=>{cons
 test('ekspor dapat diimpor sebagai draf tanpa menduplikasi pengaturan',async t=>{const {req,login,db}=await fixture(t);await login();const exported=(await req('/api/admin/export')).data;assert.equal((await req('/api/admin/import','POST',exported)).res.status,201);assert.equal(listRecords(db).filter(r=>r.kind==='site').length,1);assert(listRecords(db).filter(r=>r.status==='draft').length>0);});
 test('setup menyimpan hash saja dan backup database lolos integrity_check',()=>{const dir=mkdtempSync(join(tmpdir(),'brmp-setup-'));try{execFileSync(process.execPath,[fileURLToPath(new URL('../scripts/setup.js',import.meta.url))],{cwd:dir,stdio:'pipe'});const env=readFileSync(join(dir,'.env'),'utf8');assert.match(env,/ADMIN_PASSWORD_HASH=[a-f0-9]{32}:[a-f0-9]{128}/);assert.match(env,/OPENAI_API_KEY=\r?\n/);const file=join(dir,'db.sqlite');const db=openDatabase(file);db.close();execFileSync(process.execPath,[fileURLToPath(new URL('../scripts/backup.js',import.meta.url))],{cwd:dir,env:{...process.env,DATABASE_PATH:file},stdio:'pipe'});const files=readdirSync(join(dir,'backups'));assert.equal(files.length,1);const restored=new DatabaseSync(join(dir,'backups',files[0]));assert.equal(Object.values(restored.prepare('PRAGMA integrity_check').get())[0],'ok');assert.equal(restored.prepare("SELECT COUNT(*) AS n FROM records WHERE kind='service'").get().n,8);restored.close();}finally{rmSync(dir,{recursive:true,force:true});}});
 test('assets frontend référencés existent et scripts passent le parseur',()=>{const root=fileURLToPath(new URL('../public/',import.meta.url));const html=readFileSync(join(root,'index.html'),'utf8');for(const [,file] of html.matchAll(/(?:src|href)="([^"#]+\.(?:js|css|png|jpg))"/g)){if(!file.startsWith('http'))assert(existsSync(join(root,file)),file);}for(const file of readdirSync(root).filter(n=>n.endsWith('.js')))execFileSync(process.execPath,['--check',join(root,file)],{stdio:'pipe'});});
+
+test('migrasi alamat memperbarui data lama sekali dan menjaga edit admin',async()=>{
+  const directory=mkdtempSync(join(tmpdir(),'brmp-address-'));
+  const path=join(directory,'test.sqlite');
+  let db;
+  try {
+    db=openDatabase(path);
+    const site=listRecords(db).find(r=>r.kind==='site');
+    const expected=site.data.address;
+    assert(expected.includes('RT.01/RW.5'));
+    const old='Jl. Merdeka No. 147, Kelurahan Menteng, Kecamatan Bogor Barat, Kota Bogor, Jawa Barat 16111';
+    db.prepare('UPDATE records SET data=? WHERE id=?').run(JSON.stringify({...site.data,address:old}),site.id);
+    db.exec('DELETE FROM migrations WHERE version=3');db.close();db=openDatabase(path);
+    assert.equal(listRecords(db).find(r=>r.id===site.id).data.address,expected);
+    assert((await respond(db,'alamat kantor')).answer.includes('RT.01/RW.5'));
+    const version=listRecords(db).find(r=>r.id===site.id).version;
+    db.close();db=openDatabase(path);
+    assert.equal(listRecords(db).find(r=>r.id===site.id).version,version);
+    db.prepare('UPDATE records SET data=? WHERE id=?').run(JSON.stringify({...site.data,address:'Alamat baru dari admin'}),site.id);
+    db.exec('DELETE FROM migrations WHERE version=3');db.close();db=openDatabase(path);
+    assert.equal(listRecords(db).find(r=>r.id===site.id).data.address,'Alamat baru dari admin');
+  } finally {db?.close();rmSync(directory,{recursive:true,force:true});}
+});
